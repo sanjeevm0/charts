@@ -47,6 +47,14 @@ The command deploys prometheus-operator on the Kubernetes cluster in the default
 
 The default installation includes Prometheus Operator, Alertmanager, Grafana, and configuration for scraping Kubernetes infrastructure.
 
+You may need to run the following to get it to work:
+```console
+$ helm repo add stable https://kubernetes-charts.storage.googleapis.com/
+$ cd charts/stable/prometheus-operator
+$ helm dep up
+$ helm install .
+```
+
 ## Uninstalling the Chart
 
 To uninstall/delete the `my-release` deployment:
